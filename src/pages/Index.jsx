@@ -1,39 +1,25 @@
-import React from "react";
+import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 const Index = () => {
-  const [inputValue, setInputValue] = React.useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    console.log("Submitted:", inputValue);
-    setInputValue("");
-  };
-
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">My Application</h1>
-      <Card className="w-full max-w-md mx-auto">
-        <CardHeader>
-          <CardTitle>Input Form</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Input
-            type="text"
-            placeholder="Enter something..."
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-        </CardContent>
-        <CardFooter>
-          <Button onClick={handleSubmit}>Submit</Button>
-        </CardFooter>
-      </Card>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow text-center">
+        <h1 className="text-3xl mt-8">Your Blank Canvas</h1>
+        <p className="mt-4">Chat with the agent to start making edits.</p>
+      </main>
+      <footer className="bg-gray-100 py-6 mt-auto">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <p className="text-sm text-gray-600">&copy; 2023 Your Company. All rights reserved.</p>
+            <div className="space-x-4">
+              <Button variant="ghost" size="sm">About</Button>
+              <Button variant="ghost" size="sm">Contact</Button>
+              <Button variant="ghost" size="sm">Privacy Policy</Button>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
